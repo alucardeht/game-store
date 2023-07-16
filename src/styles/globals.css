@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.brilliant-container {
+    min-height: 600px;
+    height: 100vh;
+    background: linear-gradient(50deg, #3AA6B9, #FFD0D0, #FF9EAA, #C1ECE4);
+    transition: width 2s, height 2s;
+}
+
+.brilliant-container::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    min-width: 400px;
+    min-height: 600px;
+    width: 50vw;
+    height: 80vh;
+    background: #17141d;
+    will-change: border-radius, transform, opacity;
+    animation: 5s ease-in-out 0s infinite alternate both running brilliantShape;
+    display: block;
+    transition: width 2s, height 2s;
+}
+
+.brilliant-container.brilliant-main-screens::before {
+    width: 95vw;
+    height: 80vh;
+    min-width: 768px;
+    min-height: 600px;
+}
+
+.brilliant-container.login-style::before {
+    width: 40vw;
+    height: 65vh;
+    min-width: 400px;
+    min-height: 600px;
+}
+
+.brilliant-container.register-style::before {
+    width: 50vw;
+    height: 80vh;
+    min-width: 400px;
+    min-height: 600px;
+}
+
+.brilliant-container.success-style::before {
+    width: 400px;
+    height: 400px;
+    min-width: 400px;
+    min-height: 400px;
+}
+
+@media (max-width: 768px) {
+    .brilliant-container::before {
+        width: 100vw;
+        height: 90vh;
+        min-height: unset;
+        min-width: unset;
+    }
+
+    .brilliant-container.brilliant-main-screens::before {
+        width: 100vw;
+        height: 90vh;
+        min-height: unset;
+        min-width: unset;
+    }
+
+    .brilliant-container.login-style::before {
+        width: 80vw;
+        height: 60vh;
+        min-height: unset;
+        min-width: unset;
+    }
+
+    .brilliant-container.register-style::before {
+        width: 80vw;
+        height: 90vh;
+        min-height: unset;
+        min-width: unset;
+    }
+
+    .brilliant-container.success-style::before {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brilliant-container {
+        height: 100vh;
+        min-height: unset;
+    }
+
+    .brilliant-container::before {
+        top: 0;
+        width: 0;
+        height: 0;
+        min-height: unset;
+        min-width: unset;
+        will-change: unset;
+        animation: unset;
+        transition: unset;
+    }
+
+    .brilliant-container.brilliant-main-screens::before {
+        top: 0;
+        width: 0;
+        height: 0;
+        min-height: unset;
+        min-width: unset;
+        will-change: unset;
+        animation: unset;
+        transition: unset;
+    }
+
+    .brilliant-container.login-style::before {
+        top: 100px;
+        width: 100%;
+        height: 100vh;
+        min-height: unset;
+        min-width: unset;
+        will-change: unset;
+        animation: unset;
+        transition: unset;
+    }
+
+    .brilliant-container.register-style::before {
+        top: 100px;
+        width: 100%;
+        height: 100vh;
+        min-height: unset;
+        min-width: unset;
+        will-change: unset;
+        animation: unset;
+        transition: unset;
+    }
+
+    .brilliant-container.success-style::before {
+        top: 0;
+        width: 0;
+        height: 0;
+        min-height: unset;
+        min-width: unset;
+        will-change: unset;
+        animation: unset;
+        transition: unset;
+    }
+}
+
+@keyframes brilliantShape {
+    0%, 100% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    34% {
+        border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+        transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+    }
+    50% {
+        transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+    }
+}
+
